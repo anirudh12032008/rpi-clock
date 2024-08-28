@@ -1,22 +1,34 @@
-from machine import I2C, Pin
-from pico_i2c_lcd import I2cLcd
-from ds1307 import DS1307
 import utime
+from machine import Pin, SoftI2C, Pin
+from pico_i2c_lcd import I2cLcd
+from time import sleep
 import time
 
-i2c_lcd = I2C(0, sda=Pin(0), scl=Pin(1), freq=400000)
-lcd = I2cLcd(i2c_lcd, 0x27, 2, 16)
+I2C_ADDR = 0x27
+I2C_NUM_ROWS = 2
+I2C_NUM_COLS = 16
 
-i2c_rtc = I2C(1, sda=Pin(2), scl=Pin(3))
-rtc = DS1307(i2c_rtc)
+i2c = SoftI2C(sda=Pin(0), scl=Pin(1), freq=400000)
+lcd = I2cLcd(i2c, I2C_ADDR, I2C_NUM_ROWS, I2C_NUM_COLS)
 
-def display_time():
-    now = rtc.datetime()
-    lcd.clear()
-    lcd.putstr(f"{now[4]:02}:{now[5]:02}:{now[6]:02}") 
-    utime.sleep(1)
+lcd.putstr("It's working :)")
+sleep(4)
 
-while True:
-    display_time()
-    time.sleep(2)
-    print("hi")
+
+
+try:
+    while True:
+	
+        lcd.clear()
+        lcd.putstr("Hello World!")
+        sleep(2)
+        lcd.clear()
+        lcd.move_to(0, 1)
+        lcd.putstr("Hello World!")
+        sleep(2)
+
+except KeyboardInterrupt:
+    # Turn off the display
+    print("Keyboard interrupt")
+    lcd.backlight_off()
+    lcd.display_off()
