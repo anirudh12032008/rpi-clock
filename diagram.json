@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "author": "The Bin - Hack Club",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20231005-v1.21.0" }
+    },
+    { "type": "wokwi-pushbutton", "id": "wokwi-pushbutton-0", "top": 0, "left": 118, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "wokwi-analog-joystick-0",
+      "top": -10.2,
+      "left": -196.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "wokwi-lcd1602-0",
+      "top": 41.83,
+      "left": 265.6,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 215.4, "left": 134.5, "attrs": {} },
+    { "type": "wokwi-rgb-led", "id": "wokwi-rgb-led-0", "top": 330.4, "left": 317.9, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": 204, "left": -180.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "wokwi-lcd1602-0:GND", "pico:GND.7", "black", [ "h0" ] ],
+    [ "wokwi-lcd1602-0:VCC", "pico:3V3", "red", [ "h0" ] ],
+    [ "wokwi-lcd1602-0:SDA", "pico:GP0", "green", [ "h0" ] ],
+    [ "wokwi-lcd1602-0:SCL", "pico:GP1", "green", [ "h0" ] ],
+    [ "wokwi-ds1307-0:GND", "pico:GND.7", "black", [ "h0" ] ],
+    [ "wokwi-ds1307-0:5V", "pico:3V3", "red", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
