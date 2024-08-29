@@ -13,15 +13,15 @@
     {
       "type": "wokwi-pushbutton",
       "id": "wokwi-pushbutton-0",
-      "top": 246.2,
-      "left": -268.8,
+      "top": 207.8,
+      "left": 508.8,
       "attrs": {}
     },
     {
       "type": "wokwi-analog-joystick",
       "id": "wokwi-analog-joystick-0",
-      "top": -10.2,
-      "left": -196.2,
+      "top": 191.4,
+      "left": 370.2,
       "attrs": {}
     },
     {
