@@ -1,9 +1,8 @@
 import utime
-from machine import Pin, SoftI2C, Pin
+from machine import Pin, SoftI2C, Pin, PWM
 from pico_i2c_lcd import I2cLcd
 from time import sleep
 import time
-print("hi")
 from ds1307 import DS1307
 print("hiiii")
 
@@ -17,10 +16,25 @@ lcd = I2cLcd(i2c, I2C_ADDR, I2C_NUM_ROWS, I2C_NUM_COLS)
 i2c_rtc = SoftI2C(sda=Pin(2), scl=Pin(3))
 rtc = DS1307(i2c_rtc)
 
+
+
+BUZZER_PIN = 15
+buzzer = PWM(Pin(BUZZER_PIN))
+
+
 lcd.putstr("It's working :)")
 sleep(2)
 
 
+def buzz():
+    buzzer.freq(1000)
+    buzzer.duty_u16(32768)
+    time.sleep(0.1)
+    buzzer.duty_u16(0)
+
+sleep(1)
+buzz()
+sleep(1)
 
 try:
     while True:

@@ -26,8 +26,7 @@
       "attrs": { "pins": "i2c" }
     },
     { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 215.4, "left": 134.5, "attrs": {} },
-    { "type": "wokwi-rgb-led", "id": "wokwi-rgb-led-0", "top": 330.4, "left": 317.9, "attrs": {} },
-    { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": 204, "left": -180.6, "attrs": {} }
+    { "type": "wokwi-buzzer", "id": "wokwi-buzzer-0", "top": 136.8, "left": -123, "attrs": {} }
   ],
   "connections": [
     [ "wokwi-lcd1602-0:GND", "pico:GND.7", "black", [ "h0" ] ],
@@ -37,7 +36,9 @@
     [ "wokwi-ds1307-0:GND", "pico:GND.7", "black", [ "h0" ] ],
     [ "wokwi-ds1307-0:5V", "pico:3V3", "red", [ "h0" ] ],
     [ "wokwi-ds1307-0:SDA", "pico:GP2", "green", [ "h-172.8", "v-125.1", "h-9.6" ] ],
-    [ "pico:GP3", "wokwi-ds1307-0:SCL", "green", [ "h22.75", "v246.35", "h48", "v-28.8" ] ]
+    [ "pico:GP3", "wokwi-ds1307-0:SCL", "green", [ "h22.75", "v246.35", "h48", "v-28.8" ] ],
+    [ "wokwi-buzzer-0:2", "pico:GP15", "red", [ "h18.8", "v-25.59" ] ],
+    [ "wokwi-buzzer-0:1", "pico:GND.7", "black", [ "v-67.2", "h211.2", "v-86.4" ] ]
   ],
   "dependencies": {}
 }
