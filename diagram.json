@@ -10,7 +10,13 @@
       "left": 0,
       "attrs": { "env": "micropython-20231005-v1.21.0" }
     },
-    { "type": "wokwi-pushbutton", "id": "wokwi-pushbutton-0", "top": 0, "left": 118, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "wokwi-pushbutton-0",
+      "top": 246.2,
+      "left": -268.8,
+      "attrs": {}
+    },
     {
       "type": "wokwi-analog-joystick",
       "id": "wokwi-analog-joystick-0",
@@ -38,7 +44,14 @@
     [ "wokwi-ds1307-0:SDA", "pico:GP2", "green", [ "h-172.8", "v-125.1", "h-9.6" ] ],
     [ "pico:GP3", "wokwi-ds1307-0:SCL", "green", [ "h22.75", "v246.35", "h48", "v-28.8" ] ],
     [ "wokwi-buzzer-0:2", "pico:GP15", "red", [ "h18.8", "v-25.59" ] ],
-    [ "wokwi-buzzer-0:1", "pico:GND.7", "black", [ "v-67.2", "h211.2", "v-86.4" ] ]
+    [ "wokwi-buzzer-0:1", "pico:GND.7", "black", [ "v-67.2", "h211.2", "v-86.4" ] ],
+    [ "wokwi-analog-joystick-0:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "wokwi-analog-joystick-0:GND", "pico:GND.4", "black", [ "v0" ] ],
+    [ "wokwi-analog-joystick-0:HORZ", "pico:GP26", "green", [ "v0" ] ],
+    [ "wokwi-analog-joystick-0:VERT", "pico:GP27", "green", [ "v0" ] ],
+    [ "wokwi-analog-joystick-0:SEL", "pico:GP28", "green", [ "v0" ] ],
+    [ "wokwi-pushbutton-0:2.l", "pico:GND.4", "green", [ "h220.8", "v0.2" ] ],
+    [ "wokwi-pushbutton-0:1.r", "pico:GP22", "green", [ "v-9.6", "h96.2" ] ]
   ],
   "dependencies": {}
 }
